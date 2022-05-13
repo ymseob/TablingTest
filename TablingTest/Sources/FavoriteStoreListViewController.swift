@@ -1,19 +1,16 @@
 //
-//  ViewController.swift
+//  FavoriteStoreListViewController.swift
 //  TablingTest
 //
-//  Created by Orion on 2022/05/13.
+//  Created by Minseob on 2022/05/13.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class FavoriteStoreListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
 
