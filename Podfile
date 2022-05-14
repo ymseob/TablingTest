@@ -6,7 +6,7 @@ target 'TablingTest' do
   use_frameworks!
   pod 'Kingfisher'
   pod 'Alamofire'
-
+  pod 'RxSwift'
   # Pods for TablingTest
 
 end

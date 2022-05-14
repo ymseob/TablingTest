@@ -73,10 +73,3 @@ extension FavoriteStoreListViewController: FavoriteStoreListTableViewHeaderViewD
         print(didSelectType)
     }
 }
-
-/*
-
-:  https://my-json-server.typicode.com/tabling/tabling_mobile_test/save
-: https://my-json-server.typicode.com/tabling/tabling_mobile_test/recent
-
- */
