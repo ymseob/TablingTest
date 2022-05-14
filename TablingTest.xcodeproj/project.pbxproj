@@ -130,15 +130,9 @@
 			children = (
 				CEEABD68282E161200E7767F /* AppDelegate.swift */,
 				CEEABD6A282E161200E7767F /* SceneDelegate.swift */,
-				CEEABD6C282E161200E7767F /* FavoriteStoreListViewController.swift */,
-				CEEABD85282E3C0900E7767F /* StoreTableViewCell.swift */,
-				CEEABD86282E3C0900E7767F /* StoreTableViewCell.xib */,
-				CEEABD89282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift */,
-				CEEABD8B282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib */,
-				CEEABD9F282F596000E7767F /* FavoriteStoreListViewModel.swift */,
-				CEEABD8F282F544400E7767F /* FavoriteStoreRepository.swift */,
-				CEEABD8D282F519400E7767F /* Store.swift */,
-				CEEABDA1282F604500E7767F /* Array+Extension.swift */,
+				CEEABDA3282F63FA00E7767F /* FavoriteStoreList */,
+				CEEABDA4282F640700E7767F /* Entity */,
+				CEEABDA5282F640C00E7767F /* Extensions */,
 				CEEABD91282F54B300E7767F /* NetworkLayer */,
 			);
 			path = Sources;
@@ -171,6 +165,36 @@
 				CEEABD97282F54B300E7767F /* RecentlyListAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		CEEABDA3282F63FA00E7767F /* FavoriteStoreList */ = {
+			isa = PBXGroup;
+			children = (
+				CEEABD6C282E161200E7767F /* FavoriteStoreListViewController.swift */,
+				CEEABD85282E3C0900E7767F /* StoreTableViewCell.swift */,
+				CEEABD86282E3C0900E7767F /* StoreTableViewCell.xib */,
+				CEEABD89282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift */,
+				CEEABD8B282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib */,
+				CEEABD9F282F596000E7767F /* FavoriteStoreListViewModel.swift */,
+				CEEABD8F282F544400E7767F /* FavoriteStoreRepository.swift */,
+			);
+			path = FavoriteStoreList;
+			sourceTree = "<group>";
+		};
+		CEEABDA4282F640700E7767F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CEEABD8D282F519400E7767F /* Store.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CEEABDA5282F640C00E7767F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEEABDA1282F604500E7767F /* Array+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

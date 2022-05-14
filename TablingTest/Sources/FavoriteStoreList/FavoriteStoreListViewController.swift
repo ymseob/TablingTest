@@ -81,9 +81,7 @@ extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(
-            withIdentifier: FavoriteStoreListTableViewHeaderView.identifier
-        ) as? FavoriteStoreListTableViewHeaderView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FavoriteStoreListTableViewHeaderView.identifier) as? FavoriteStoreListTableViewHeaderView
         headerView?.delegate = self
         return headerView
     }
