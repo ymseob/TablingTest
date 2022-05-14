@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol FavoriteStoreListTableViewHeaderViewDelegate: AnyObject {
+    func favoriteStoreListTableViewHeaderView(
+        _ favoriteStoreListTableViewHeaderView: FavoriteStoreListTableViewHeaderView,
+        didSelectType: FavoriteStoreListTableViewHeaderView.ListType
+    )
+}
+
 final class FavoriteStoreListTableViewHeaderView: UITableViewHeaderFooterView {
+    static let identifier = "FavoriteStoreListTableViewHeaderView"
+    static let height: CGFloat = 44
+
     @IBOutlet private weak var savedLabel: UILabel!
     @IBOutlet private weak var recentlyLabel: UILabel!
     @IBOutlet private weak var bottomIndicatorView: UIView!
@@ -21,6 +31,8 @@ final class FavoriteStoreListTableViewHeaderView: UITableViewHeaderFooterView {
 
     private let savedLabelTapGestureRecognizer = UITapGestureRecognizer()
     private let recentlyLabelTapGestureRecognizer = UITapGestureRecognizer()
+
+    weak var delegate: FavoriteStoreListTableViewHeaderViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,10 +77,12 @@ final class FavoriteStoreListTableViewHeaderView: UITableViewHeaderFooterView {
     @objc
     private func savedDidTap() {
         updateUI(to: .saved)
+        delegate?.favoriteStoreListTableViewHeaderView(self, didSelectType: .saved)
     }
 
     @objc
     private func recentlyDidTap() {
         updateUI(to: .recently)
+        delegate?.favoriteStoreListTableViewHeaderView(self, didSelectType: .recently)
     }
 }

@@ -9,6 +9,9 @@ import UIKit
 import Kingfisher
 
 final class StoreTableViewCell: UITableViewCell {
+    static let identifier = "StoreTableViewCell"
+    static let height: CGFloat = 120
+
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var newBadgeView: UIView!
     @IBOutlet private weak var waitingContainerView: UIView!

@@ -16,8 +16,18 @@ final class FavoriteStoreListViewController: UIViewController {
     }
 
     private func setup() {
-        storeListTableView.register(UINib(nibName: "StoreTableViewCell", bundle: nil), forCellReuseIdentifier: "StoreTableViewCell")
-        storeListTableView.register(UINib(nibName: "FavoriteStoreListTableViewHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "FavoriteStoreListTableViewHeaderView")
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        storeListTableView.register(
+            UINib(nibName: StoreTableViewCell.identifier, bundle: nil),
+            forCellReuseIdentifier: StoreTableViewCell.identifier
+        )
+        storeListTableView.register(
+            UINib(nibName: FavoriteStoreListTableViewHeaderView.identifier, bundle: nil),
+            forHeaderFooterViewReuseIdentifier: FavoriteStoreListTableViewHeaderView.identifier
+        )
 
         if #available(iOS 15.0, *) {
             storeListTableView.sectionHeaderTopPadding = .zero
@@ -27,7 +37,7 @@ final class FavoriteStoreListViewController: UIViewController {
 
 extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return StoreTableViewCell.height
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +45,7 @@ extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let dequeued = tableView.dequeueReusableCell(withIdentifier: "StoreTableViewCell", for: indexPath)
+        let dequeued = tableView.dequeueReusableCell(withIdentifier: StoreTableViewCell.identifier, for: indexPath)
         guard let cell = dequeued as? StoreTableViewCell else {
             return dequeued
         }
@@ -43,12 +53,24 @@ extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FavoriteStoreListTableViewHeaderView")
-        return header
+        let headerView = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: FavoriteStoreListTableViewHeaderView.identifier
+        ) as? FavoriteStoreListTableViewHeaderView
+        headerView?.delegate = self
+        return headerView
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
+        return FavoriteStoreListTableViewHeaderView.height
+    }
+}
+
+extension FavoriteStoreListViewController: FavoriteStoreListTableViewHeaderViewDelegate {
+    func favoriteStoreListTableViewHeaderView(
+        _ favoriteStoreListTableViewHeaderView: FavoriteStoreListTableViewHeaderView,
+        didSelectType: FavoriteStoreListTableViewHeaderView.ListType
+    ) {
+        print(didSelectType)
     }
 }
 
