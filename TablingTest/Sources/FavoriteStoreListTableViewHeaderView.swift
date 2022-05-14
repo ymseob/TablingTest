@@ -10,7 +10,7 @@ import UIKit
 protocol FavoriteStoreListTableViewHeaderViewDelegate: AnyObject {
     func favoriteStoreListTableViewHeaderView(
         _ favoriteStoreListTableViewHeaderView: FavoriteStoreListTableViewHeaderView,
-        didSelectType: FavoriteStoreListTableViewHeaderView.ListType
+        didSelectType: FavoriteStoreListType
     )
 }
 
@@ -23,11 +23,6 @@ final class FavoriteStoreListTableViewHeaderView: UITableViewHeaderFooterView {
     @IBOutlet private weak var bottomIndicatorView: UIView!
     @IBOutlet private weak var bottomIndicatorViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var bottomIndicatorLeadingConstraint: NSLayoutConstraint!
-
-    enum ListType {
-        case saved
-        case recently
-    }
 
     private let savedLabelTapGestureRecognizer = UITapGestureRecognizer()
     private let recentlyLabelTapGestureRecognizer = UITapGestureRecognizer()
@@ -56,7 +51,7 @@ final class FavoriteStoreListTableViewHeaderView: UITableViewHeaderFooterView {
         recentlyLabelTapGestureRecognizer.addTarget(self, action: #selector(recentlyDidTap))
     }
 
-    private func updateUI(to listType: ListType) {
+    private func updateUI(to listType: FavoriteStoreListType) {
         guard let willFoucusLabel = listType == .saved ? savedLabel : recentlyLabel else {
             return
         }

@@ -45,11 +45,11 @@
                         </constraints>
                     </view>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obI-Fo-MVP">
-                        <rect key="frame" x="18" y="110" width="68" height="30"/>
+                        <rect key="frame" x="18" y="113.5" width="57" height="26.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대기 없음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uL-fm-boR">
-                                <rect key="frame" x="6" y="6" width="56" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="6" y="6" width="45" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -139,12 +139,12 @@
                 <outlet property="addressLabel" destination="Xdz-so-aJg" id="8aZ-aH-SxY"/>
                 <outlet property="categoryLabel" destination="7QX-Tm-7we" id="Mv0-XR-qtI"/>
                 <outlet property="newBadgeView" destination="li3-9a-SdA" id="FNM-Xz-fBr"/>
+                <outlet property="optionContainerView" destination="Oa7-6B-dOp" id="ffU-AY-Bn0"/>
+                <outlet property="optionLabel" destination="NfN-Z5-PS1" id="e2T-24-FdE"/>
                 <outlet property="rateLabel" destination="Ix9-im-3uv" id="Enn-Fh-rS5"/>
                 <outlet property="starImageView" destination="BSU-4F-Usu" id="7T1-gv-Mmk"/>
                 <outlet property="storeNameLabel" destination="NcH-BI-HZ4" id="ZL7-U8-QFb"/>
                 <outlet property="thumbnailImageView" destination="MSQ-Gr-MEH" id="3BH-dQ-4QO"/>
-                <outlet property="typeContainerView" destination="Oa7-6B-dOp" id="iw6-BQ-59X"/>
-                <outlet property="typeLabel" destination="NfN-Z5-PS1" id="2c3-nS-23r"/>
                 <outlet property="waitingContainerView" destination="obI-Fo-MVP" id="OTd-RE-CqM"/>
                 <outlet property="waitingLabel" destination="4uL-fm-boR" id="XaW-Pw-9gS"/>
             </connections>

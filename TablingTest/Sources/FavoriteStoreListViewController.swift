@@ -6,13 +6,24 @@
 //
 
 import UIKit
+import RxSwift
+
+enum FavoriteStoreListType {
+    case saved
+    case recently
+}
 
 final class FavoriteStoreListViewController: UIViewController {
     @IBOutlet private weak var storeListTableView: UITableView!
+    @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+
+    private let viewModel = FavoriteStoreListViewModel()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        fetch()
     }
 
     private func setup() {
@@ -33,21 +44,38 @@ final class FavoriteStoreListViewController: UIViewController {
             storeListTableView.sectionHeaderTopPadding = .zero
         }
     }
+
+    private func fetch() {
+        indicatorView.startAnimating()
+        Observable.zip(
+            viewModel.fetchSavedList(),
+            viewModel.fetchRecentlyList()
+        )
+        .subscribe(with: self) { owner, _ in
+            owner.viewModel.selectListType(.saved)
+            owner.storeListTableView.reloadData()
+            owner.indicatorView.stopAnimating()
+        }
+        .disposed(by: disposeBag)
+    }
 }
 
 extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return StoreTableViewCell.height
+        StoreTableViewCell.height
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        viewModel.numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dequeued = tableView.dequeueReusableCell(withIdentifier: StoreTableViewCell.identifier, for: indexPath)
         guard let cell = dequeued as? StoreTableViewCell else {
             return dequeued
+        }
+        if let store = viewModel.store(for: indexPath.row) {
+            cell.configure(store)
         }
         return cell
     }
@@ -68,8 +96,9 @@ extension FavoriteStoreListViewController: UITableViewDataSource, UITableViewDel
 extension FavoriteStoreListViewController: FavoriteStoreListTableViewHeaderViewDelegate {
     func favoriteStoreListTableViewHeaderView(
         _ favoriteStoreListTableViewHeaderView: FavoriteStoreListTableViewHeaderView,
-        didSelectType: FavoriteStoreListTableViewHeaderView.ListType
+        didSelectType: FavoriteStoreListType
     ) {
-        print(didSelectType)
+        viewModel.selectListType(didSelectType)
+        storeListTableView.reloadData()
     }
 }

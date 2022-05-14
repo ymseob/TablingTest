@@ -34,4 +34,18 @@ extension Store {
     var hasReview: Bool {
         reviewCount > .zero
     }
+
+    var hasOption: Bool {
+        isQuickBooking || isRemoteWaiting
+    }
+
+    var optionText: String {
+        if isQuickBooking {
+            return "즉시예약"
+        }
+        if isRemoteWaiting {
+            return "원격줄서기"
+        }
+        return ""
+    }
 }
