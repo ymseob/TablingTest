@@ -17,6 +17,7 @@
 		CEEABD88282E3C0900E7767F /* StoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEABD86282E3C0900E7767F /* StoreTableViewCell.xib */; };
 		CEEABD8A282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEABD89282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift */; };
 		CEEABD8C282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEABD8B282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib */; };
+		CEEABD8E282F519400E7767F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEABD8D282F519400E7767F /* Store.swift */; };
 		E8A929ADB90A13DE446FE7C3 /* Pods_TablingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F37445A18FB4FE3FDE10E /* Pods_TablingTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		CEEABD86282E3C0900E7767F /* StoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreTableViewCell.xib; sourceTree = "<group>"; };
 		CEEABD89282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoreListTableViewHeaderView.swift; sourceTree = "<group>"; };
 		CEEABD8B282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteStoreListTableViewHeaderView.xib; sourceTree = "<group>"; };
+		CEEABD8D282F519400E7767F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				CEEABD86282E3C0900E7767F /* StoreTableViewCell.xib */,
 				CEEABD89282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift */,
 				CEEABD8B282F431000E7767F /* FavoriteStoreListTableViewHeaderView.xib */,
+				CEEABD8D282F519400E7767F /* Store.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				CEEABD6D282E161200E7767F /* FavoriteStoreListViewController.swift in Sources */,
 				CEEABD8A282F42EB00E7767F /* FavoriteStoreListTableViewHeaderView.swift in Sources */,
 				CEEABD69282E161200E7767F /* AppDelegate.swift in Sources */,
+				CEEABD8E282F519400E7767F /* Store.swift in Sources */,
 				CEEABD6B282E161200E7767F /* SceneDelegate.swift in Sources */,
 				CEEABD87282E3C0900E7767F /* StoreTableViewCell.swift in Sources */,
 			);

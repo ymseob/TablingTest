@@ -34,6 +34,18 @@ final class StoreTableViewCell: UITableViewCell {
         clearUI()
     }
 
+    func configure(_ store: Store) {
+        thumbnailImageView.kf.setImage(with: store.thumbnail)
+        newBadgeView.isHidden = store.isNew
+        waitingContainerView.isHidden = store.useWaiting
+        waitingLabel.text = store.waitingText
+        categoryLabel.text = store.classification
+        storeNameLabel.text = store.restaurantName
+        starImageView.image = store.hasReview ? Image.star : Image.star?.withTintColor(.lightGray, renderingMode: .alwaysTemplate)
+        rateLabel.text = "\(store.rating) (\(store.reviewCount))"
+        addressLabel.text = store.summaryAddress
+    }
+
     private func setupUI() {
         newBadgeView.layer.cornerRadius = 5
         thumbnailImageView.layer.cornerRadius = 5
