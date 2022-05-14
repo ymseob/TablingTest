@@ -14,24 +14,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7Y-jE-AdR">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7Y-jE-AdR">
                     <rect key="frame" x="18" y="7.9999999999999982" width="28" height="19.333333333333329"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근본" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-rC-XuP">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근본" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-rC-XuP">
                     <rect key="frame" x="71" y="7.9999999999999982" width="41.666666666666657" height="19.333333333333329"/>
+                    <gestureRecognizers/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-bQ-4KF">
-                    <rect key="frame" x="18" y="34" width="26" height="1.6666666666666643"/>
+                    <rect key="frame" x="18" y="34" width="28" height="1.6666666666666643"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1.5" id="3j1-Op-YzZ"/>
-                        <constraint firstAttribute="width" constant="26" id="gMR-CZ-aQz"/>
+                        <constraint firstAttribute="width" constant="28" id="gMR-CZ-aQz"/>
                     </constraints>
                 </view>
             </subviews>
@@ -45,6 +47,13 @@
                 <constraint firstItem="v7Y-jE-AdR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ppP-d0-vS2"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomIndicatorLeadingConstraint" destination="a0B-sw-Fdz" id="ITE-eI-Njp"/>
+                <outlet property="bottomIndicatorView" destination="ty0-bQ-4KF" id="Yl9-E6-REh"/>
+                <outlet property="bottomIndicatorViewWidthConstraint" destination="gMR-CZ-aQz" id="Ej8-Vz-sE9"/>
+                <outlet property="recentlyLabel" destination="ONi-rC-XuP" id="hlL-T7-xZ6"/>
+                <outlet property="savedLabel" destination="v7Y-jE-AdR" id="GMA-Jw-v56"/>
+            </connections>
             <point key="canvasLocation" x="131.19999999999999" y="137.4384236453202"/>
         </view>
     </objects>
