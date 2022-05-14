@@ -13,9 +13,13 @@
 		CEEABD70282E161200E7767F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEABD6E282E161200E7767F /* Main.storyboard */; };
 		CEEABD72282E161600E7767F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEEABD71282E161600E7767F /* Assets.xcassets */; };
 		CEEABD75282E161600E7767F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEABD73282E161600E7767F /* LaunchScreen.storyboard */; };
+		E8A929ADB90A13DE446FE7C3 /* Pods_TablingTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9F37445A18FB4FE3FDE10E /* Pods_TablingTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A9F37445A18FB4FE3FDE10E /* Pods_TablingTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TablingTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27FDE58084D8D60764709629 /* Pods-TablingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablingTest.release.xcconfig"; path = "Target Support Files/Pods-TablingTest/Pods-TablingTest.release.xcconfig"; sourceTree = "<group>"; };
+		85BCBD6F9DD4A1013573DC0F /* Pods-TablingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablingTest.debug.xcconfig"; path = "Target Support Files/Pods-TablingTest/Pods-TablingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		CEEABD65282E161200E7767F /* TablingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TablingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEABD68282E161200E7767F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEEABD6A282E161200E7767F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8A929ADB90A13DE446FE7C3 /* Pods_TablingTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13838676E8D8A0A6FC8532B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85BCBD6F9DD4A1013573DC0F /* Pods-TablingTest.debug.xcconfig */,
+				27FDE58084D8D60764709629 /* Pods-TablingTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4F7C991397BB65738B22E813 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A9F37445A18FB4FE3FDE10E /* Pods_TablingTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEEABD5C282E161200E7767F = {
 			isa = PBXGroup;
 			children = (
 				CEEABD67282E161200E7767F /* TablingTest */,
 				CEEABD66282E161200E7767F /* Products */,
+				13838676E8D8A0A6FC8532B7 /* Pods */,
+				4F7C991397BB65738B22E813 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEEABD79282E161600E7767F /* Build configuration list for PBXNativeTarget "TablingTest" */;
 			buildPhases = (
+				0DF4A74B21CC766A1A4DFAE6 /* [CP] Check Pods Manifest.lock */,
 				CEEABD61282E161200E7767F /* Sources */,
 				CEEABD62282E161200E7767F /* Frameworks */,
 				CEEABD63282E161200E7767F /* Resources */,
+				E660025F0EE1EAF92A4E25BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +182,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DF4A74B21CC766A1A4DFAE6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TablingTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E660025F0EE1EAF92A4E25BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TablingTest/Pods-TablingTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TablingTest/Pods-TablingTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TablingTest/Pods-TablingTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEEABD61282E161200E7767F /* Sources */ = {
@@ -308,14 +376,15 @@
 		};
 		CEEABD7A282E161600E7767F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85BCBD6F9DD4A1013573DC0F /* Pods-TablingTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R6PH8CC8T3;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TablingTest/Info.plist;
+				INFOPLIST_FILE = "TablingTest/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,14 +406,15 @@
 		};
 		CEEABD7B282E161600E7767F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27FDE58084D8D60764709629 /* Pods-TablingTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R6PH8CC8T3;
+				DEVELOPMENT_TEAM = 78N9H93U2R;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TablingTest/Info.plist;
+				INFOPLIST_FILE = "TablingTest/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
